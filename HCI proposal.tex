@@ -1,0 +1,91 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+% Custom bibliography formatting
+\renewcommand*{\bibfont}{\normalsize} % Ensure font size consistency
+\setlength\bibhang{1cm}   % Indent the first line of each entry by 1cm
+\setlength\bibitemsep{6pt} % Space between bibliography entries
+\renewcommand{\bibsetup}{\setlength{\bibhang}{1cm}} % Apply first-line indent
+
+% Ensure bibliography title is left-aligned without indentation
+\defbibheading{bibliography}{\raggedright \textbf{Références} \vspace{12pt}}
+\usepackage{caption}
+\captionsetup{format=hang, margin=12pt}
+
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+%\usepackage{showframe}
+
+\addbibresource{ref.bib}
+
+% Change "and" to "et" in author lists
+%\DefineBibliographyStrings{english}{%
+%  and = {et}, % Changes "and" to "et"
+%}
+
+
+% Configuration
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\setmainfont{TeX Gyre Termes}
+\renewcommand{\baselinestretch}{1}
+
+% Title formatting
+%\titleformat{\section}{\centering\bfseries\normalsize}{\thesection}{1em}{}
+%\titleformat{\subsection}{\bfseries\normalsize}{\thesubsection}{1em}{}
+%\titleformat{\subsubsection}{\normalsize}{\thesubsubsection}{1em}{}
+
+% Page numbering
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\clubpenalty=100000
+\widowpenalty=100000
+\displaywidowpenalty=100000
+\brokenpenalty=100000
+
+\begin{document}
+
+\begin{titlepage}
+
+\vspace*{3cm}
+
+\begin{center}
+\textbf{\textsc{Emotion analysis of user complaints in the public sector with several zero-shot learning methods} }
+\end{center}
+
+\vspace{3cm}
+
+\begin{center}
+\hspace{3cm}
+\textbf{LEVY BENJAMIN \hfill BENAVENT CHRISTOPHE} \hspace*{3cm} \\ \medskip
+     \textbf{Dauphine Recherches en Management  (DRM),\\
+      Université Paris Dauphine-PSL
+}
+\end{center}
+
+\vspace{1cm}
+\end{titlepage}
+
+
+\section{Introduction}
+\section{Literature Review}
+\section{Methodology}
+\section{Results}
+\section{Conclusion}
+
+
+\clearpage
+\newpage
+
+\printbibliography
+
+\break
+\noindent\textbf{Figures :}
+
+\end{document}
