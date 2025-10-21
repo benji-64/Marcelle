@@ -19,7 +19,7 @@ print("labels")
 # Catégories candidates
 candidate_labels = [
     "Amour", "Affection", "Calme", "Plaisir", "Gratitude", "Soulagement",
-    "Surprise", "Confusion", "Dégoût", "Honte", "Colère", "Indignation",
+    "Surprise", "Confusion", "Dégoût", "Détresse", "Honte", "Colère", "Indignation",
     "Déception", "Frustration", "Tristesse", "Désespoir", "Doute", "Espoir",
     "Peur", "Bonheur", "Joie", "Anxiété", "Fierté", "Acceptation",
     "Excitation", "Amusement", "Désir", "Respect", "Appréhension", "Angoisse",
@@ -32,7 +32,7 @@ candidate_labels = [
 # df = pd.read_csv('data/data_work.csv')
 
 print("import fichier")
-ditp = pd.read_excel('2025_07_22_DITP.xlsx')
+ditp = pd.read_excel('2025_10_21_DITP.xlsx')
 
 # Réduction des colones
 df = ditp[["ID expérience", "Description"]]
@@ -49,7 +49,7 @@ ids = df['ID expérience'].tolist()
 # Liste pour stocker les temps d'exécution
 execution_times = []
 
-# Double boucle sur vecteur_model et vecteur_batch
+# Double boucle sur vecteur_model et vecteur_batch / Boucle vecteur batch supprimée
 print("loop")
 for model in vecteur_model:
     print(f"Traitement avec le modèle: {model} et batch_size: {batch_size}")
