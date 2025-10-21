@@ -1,4 +1,5 @@
 from transformers import pipeline
+import torch
 import pandas as pd
 import os
 import time
@@ -11,6 +12,14 @@ vecteur_model = [
     "mtheo/camembert-base-xnli" #camembert
 
 ]
+
+if torch.cuda.is_available():
+    device = torch.device('cuda')
+elif torch.backends.mps.is_available():
+    device = torch.device("mps")
+else:
+    device = torch.device('cpu')
+    print ("GPU not found.")
 
 # vecteur_batch = [4, 8, 16, 32]
 batch_size =16
@@ -32,7 +41,7 @@ candidate_labels = [
 # df = pd.read_csv('data/data_work.csv')
 
 print("import fichier")
-ditp = pd.read_excel('2025_10_21_DITP.xlsx')
+ditp = pd.read_csv('2025_10_21_DITP.csv', encoding="utf8", sep=";")
 
 # Réduction des colones
 df = ditp[["ID expérience", "Description"]]
@@ -55,7 +64,7 @@ for model in vecteur_model:
     print(f"Traitement avec le modèle: {model} et batch_size: {batch_size}")
 
     # Charger le pipeline de zero-shot classification
-    classifier = pipeline("zero-shot-classification", model=model, device=-1, batch_size=4,
+    classifier = pipeline("zero-shot-classification", model=model, device=device, batch_size=batch_size,
                           multilabel=True)
 
     # Enregistrer le temps de début
@@ -72,7 +81,7 @@ for model in vecteur_model:
     
 
     for i, text in enumerate(texts):
-        result = classifier(text, candidate_labels)
+        result = classifier(text, candidate_labels, hypothesis_template="L'émotion de ce texte est {}.", multilabel=True)
         results.append(result)
 
         print(i)
