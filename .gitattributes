@@ -2,3 +2,5 @@
 class_camembert-base-xnli_B16.csv filter=lfs diff=lfs merge=lfs -text
 class_deberta-v3-large-zeroshot-v2.0_B16.csv filter=lfs diff=lfs merge=lfs -text
 class_xlm-roberta-large-xnli_B16.csv filter=lfs diff=lfs merge=lfs -text
+*.csv filter=lfs diff=lfs merge=lfs -text
+*.xlsx filter=lfs diff=lfs merge=lfs -text

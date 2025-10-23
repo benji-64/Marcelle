@@ -1,4 +1,3 @@
-Modèle,Taille de lot,exécution
-MoritzLaurer/deberta-v3-large-zeroshot-v2.0,16,11167.292955875397
-joeddav/xlm-roberta-large-xnli,16,21382.85865497589
-mtheo/camembert-base-xnli,16,7281.335362195969
+version https://git-lfs.github.com/spec/v1
+oid sha256:ca8356cd85b9146984050812ee78142f3b6a07f432bd6e6290778b12e0aaab94
+size 198
