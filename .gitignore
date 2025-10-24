@@ -4,3 +4,4 @@
 *.xml
 *.gz
 .python-version
+*.iml
