@@ -207,11 +207,11 @@ times=pd.concat([times, times2], ignore_index=True)
 
 ####################### Troisieme modele ############################
 
-print('modele roberta')
-m='roberta'
+print('modele camembert')
+m='camembert'
 
 
-zeroshot_classifier = pipeline("zero-shot-classification", model="joeddav/xlm-roberta-large-xnli",
+zeroshot_classifier = pipeline("zero-shot-classification", model="mtheo/camembert-base-xnli",
                                device=device, batch_size=batch_size, multilabel=True)
 hypothesis_template = "The emotions of this text are {}"
 results = []
@@ -282,7 +282,7 @@ times2 = pd.DataFrame([{
     "Taille de lot": batch_size,
     "Execution (s)": round(execution_time, 2),
 }])
-
+times=pd.concat([times, times2], ignore_index=True)
 
 
 
