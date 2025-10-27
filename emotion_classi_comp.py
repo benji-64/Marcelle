@@ -31,10 +31,10 @@ else:
     print ("GPU not found.")
 
 classes = [
-    "Acceptation", "Affection", "Amour", "Amusement", "Angoisse", "Anxiété", "Appréhension",
+    "Acceptation", "Affection", "Amour", "Amusement", "Angoisse", "Anxiété", "Appréhension", "Appartenance",
     "Bonheur", "Calme", "Colère", "Confusion", "Déception", "Dégoût", "Dépit", "Désespoir", "Désir", "Détresse",
-    "Doute", "Enthousiasme", "Espérance", "Espoir", "Étonnement", "Excitation", "Expression",
-    "Fierté", "Frustration", "Gratitude", "Honte", "Indignation", "Inquiétude", "Insatisfaction",
+    "Dignité", "Doute", "Enthousiasme", "Espérance", "Espoir", "Étonnement", "Excitation", "Expression",
+    "Fierté", "Frustration", "Gratitude", "Honte", "Humiliation", "Indignation", "Inquiétude", "Insatisfaction",
     "Intensité", "Joie", "Maîtrise", "Mépris","Optimisme",  "Peur", "Pessimisme", "Plaisir",
     "Regret", "Réjouissance", "Renoncement", "Respect", "Revendication","Satisfaction", "Soulagement",
     "Surprise", "Tristesse"
