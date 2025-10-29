@@ -5,3 +5,4 @@
 *.gz
 .python-version
 *.iml
+.idea/.name
