@@ -67,9 +67,9 @@ print(start_time)
 
 
 
-save_batch = 10
-total_rows = 100
-# total_rows = len(df)
+save_batch = 1000
+# total_rows = 100
+total_rows = len(df)
 num_batches = math.ceil(total_rows / save_batch)
 excel_file = os.path.join(output_folder, f"{m}.xlsx")
 
