@@ -14,7 +14,7 @@ print("begin")
 #############Préparation des données
 print("donnees")
 # ditp = pd.read_csv('2025_10_21_DITP.csv', encoding="utf8", sep=";")
-ditp = pd.read_csv('/Users/blevy/Documents/Marcelle/2025_10_21_DITP.csv', encoding="utf8", sep=";")
+ditp = pd.read_csv('./2025_10_21_DITP.csv', encoding="utf8", sep=";")
 df=ditp[["ID expérience","Description"]]
 
 mask = df["Description"].str.contains("amande", case=False, na=False)
