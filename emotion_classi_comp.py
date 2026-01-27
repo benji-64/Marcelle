@@ -5,6 +5,8 @@ import time
 import math
 import openpyxl
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+import subprocess
+import datetime 
 #import gc
 
 
@@ -31,6 +33,33 @@ elif torch.backends.mps.is_available():
 else:
     device = torch.device('cpu')
     print ("GPU not found.")
+
+
+
+###### push to github fonction
+print("push to github")
+def push_to_github(commit_message=None):
+    """
+    Pushes results to GitHub
+    """
+    try:
+
+        if commit_message is None:
+            commit_message = f"Auto-update: {datetime.datetime.now().strftime('%Y-ùm-%d,%H:%M:%S')}"
+
+        subprocess.run(['git', 'add'; '.'], check = True)
+
+        subprocess.run(['git', 'commit', '-m', commit_message], check=True)
+
+        subprocess.rub(['git', 'push', 'origin', 'master'], check=True)
+
+        print(f"Successfully pushed to GitHub: {commit_message}")
+
+    except subprocess.CalledProcessError as e:
+        print(f"Error pushing to GitHub: {e}")
+
+
+
 
 # classes = [
 #     "Acceptation", "Affection", "Amour", "Amusement", "Angoisse", "Anxiété", "Appréhension", "Appartenance",
@@ -126,6 +155,8 @@ for batch_idx in range(num_batches):
             # gc.collect()
 
     print(f"Saved batch {batch_idx + 1} to {excel_file}")
+
+    push_to_github("new results")
 
 # Enregistrer le temps de fin
 end_time = time.time()
