@@ -73,10 +73,13 @@ def push_to_github(commit_message=None):
 #     "Résignation", "Décence", "Distinction", "Considération", "Justice procédurale", "Justice interactionnelle", "Justice restauratrice"
 #     ]
 
-#classes = ["Résignation", "Décence", "Distinction", "Considération", "Justice procédurale", "Justice interactionnelle", "Justice restauratrice"
+#classes = ["Résignation", "Décence", "Distinction", "Justice procédurale", "Justice interactionnelle", "Justice restauratrice"
  #   ]
 
-classes = ["Détermination", "Persevérance", "Engagement", "Résignation", "Abandon"]
+classes = ["Détermination", "Persevérance", "Engagement", "Résignation", "Abandon", "Égalité", "Équité", "Motivation", "Détachement", "Indifférence",
+           "Apathie", "Lassitude", "Apaisement", "Tranquillité", "Résignation", "Passivité", "Découragement", "Sentiment d'injustice", "Incompréhension",
+           "Arbitraire", "Considération", "Impuissance", "Incertitude", "Impatience", "Confiance", "Rassurance", "Sécurité", "Fatigue administrative",
+           "Sentiment d'abandon" ]
 
 print(classes)
 
@@ -157,7 +160,7 @@ for batch_idx in range(num_batches):
 
     print(f"Saved batch {batch_idx + 1} to {excel_file}")
 
-    push_to_github("new results")
+
 
 # Enregistrer le temps de fin
 end_time = time.time()
@@ -171,6 +174,8 @@ times = pd.DataFrame([{
     "Taille de lot": batch_size,
     "Execution (s)": round(execution_time, 2),
 }])
+
+push_to_github("Deberta")
 
 
 ####################### Deuxieme modele ############################
@@ -247,6 +252,8 @@ times2 = pd.DataFrame([{
 }])
 
 times=pd.concat([times, times2], ignore_index=True)
+
+push_to_github("Roberta")
 
 ####################### Troisieme modele ############################
 
@@ -325,3 +332,6 @@ times2 = pd.DataFrame([{
 times=pd.concat([times, times2], ignore_index=True)
 
 times.to_csv(os.path.join(output_folder, "times.csv"), index=False)
+
+
+push_to_github("Camembert")
