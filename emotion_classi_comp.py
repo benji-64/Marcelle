@@ -4,9 +4,10 @@ import os
 import time
 import math
 import openpyxl
-from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
 import subprocess
-import datetime 
+import datetime
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline
+ 
 #import gc
 
 
@@ -42,21 +43,21 @@ def push_to_github(commit_message=None):
     """
     Pushes results to GitHub
     """
-    try:
+    try: 
 
         if commit_message is None:
-            commit_message = f"Auto-update: {datetime.datetime.now().strftime('%Y-ùm-%d,%H:%M:%S')}"
+            commit_message = f"Auto-update: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 
-        subprocess.run(['git', 'add'; '.'], check = True)
+        subprocess.run(['git', 'add', '.'], check = True)
 
         subprocess.run(['git', 'commit', '-m', commit_message], check=True)
 
-        subprocess.rub(['git', 'push', 'origin', 'master'], check=True)
+        subprocess.run(['git', 'push', 'origin', 'master'], check=True)
 
         print(f"Successfully pushed to GitHub: {commit_message}")
 
     except subprocess.CalledProcessError as e:
-        print(f"Error pushing to GitHub: {e}")
+        print(f"Error  pushing to GitHub: {e}")
 
 
 
