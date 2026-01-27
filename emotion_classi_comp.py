@@ -32,20 +32,28 @@ else:
     device = torch.device('cpu')
     print ("GPU not found.")
 
-classes = [
-    "Acceptation", "Affection", "Amour", "Amusement", "Angoisse", "Anxiété", "Appréhension", "Appartenance",
-    "Bonheur", "Calme", "Colère", "Confusion", "Déception", "Dégoût", "Dépit", "Désespoir", "Désir", "Détresse",
-    "Dignité", "Doute", "Enthousiasme", "Espérance", "Espoir", "Étonnement", "Excitation", "Expression",
-    "Fierté", "Frustration", "Gratitude", "Honte", "Humiliation", "Indignation", "Inquiétude", "Insatisfaction",
-    "Intensité", "Joie", "Maîtrise", "Mépris","Optimisme",  "Peur", "Pessimisme", "Plaisir",
-    "Regret", "Réjouissance", "Renoncement", "Respect", "Revendication","Satisfaction", "Soulagement",
-    "Surprise", "Tristesse"
-    ]
+# classes = [
+#     "Acceptation", "Affection", "Amour", "Amusement", "Angoisse", "Anxiété", "Appréhension", "Appartenance",
+#     "Bonheur", "Calme", "Colère", "Confusion", "Déception", "Dégoût", "Dépit", "Désespoir", "Désir", "Détresse",
+#     "Dignité", "Doute", "Enthousiasme", "Espérance", "Espoir", "Étonnement", "Excitation", "Expression",
+#     "Fierté", "Frustration", "Gratitude", "Honte", "Humiliation", "Indignation", "Inquiétude", "Insatisfaction",
+#     "Intensité", "Joie", "Maîtrise", "Mépris","Optimisme",  "Peur", "Pessimisme", "Plaisir",
+#     "Regret", "Réjouissance", "Renoncement", "Respect", "Revendication","Satisfaction", "Soulagement",
+#     "Surprise", "Tristesse",
+#     "Résignation", "Décence", "Distinction", "Considération", "Justice procédurale", "Justice interactionnelle", "Justice restauratrice"
+#     ]
+
+#classes = ["Résignation", "Décence", "Distinction", "Considération", "Justice procédurale", "Justice interactionnelle", "Justice restauratrice"
+ #   ]
+
+classes = ["Détermination", "Persevérance", "Engagement", "Résignation", "Abandon"]
+
+print(classes)
 
 batch_size =2
 batches = {} #Pour nommer les dataframe avant sauvegarde
 
-output_folder = os.path.join(os.getcwd(), "Resultats")
+output_folder = os.path.join(os.getcwd(), "Resultats/V3")
 os.makedirs(output_folder, exist_ok=True)
 
 
@@ -72,6 +80,7 @@ save_batch = 1000
 total_rows = len(df)
 num_batches = math.ceil(total_rows / save_batch)
 excel_file = os.path.join(output_folder, f"{m}.xlsx")
+print("11")
 
 for batch_idx in range(num_batches):
     print(f"Processing batch {batch_idx + 1} of {num_batches}")
